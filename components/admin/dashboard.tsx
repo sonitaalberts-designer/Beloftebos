@@ -1188,6 +1188,7 @@ function EditorField({
             onChange={async (e) => {
               const file = e.target.files?.[0];
               if (!file) return;
+              if (file.size > 4000000) { setErr("Choose an image under 4 MB."); return; }
               setUploading(true);
               setErr("");
               try {

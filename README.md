@@ -8,7 +8,7 @@ A Next.js App Router / React / TypeScript hospitality application, with Tailwind
 - Persistent booking requests, availability search, atomic overlap prevention, cancellation/move/status actions, idempotency keys, guest records and audit events.
 - Function enquiries and management. Confirmed functions atomically block selected rooms; conflicting bookings reject the whole change.
 - Email/password administrators, HttpOnly sessions, rate limits, protected server routes, one-time setup, reset flow and account disablement.
-- CMS for rooms, room photos, gallery, journal, FAQs, verified reviews, meals and website settings. Image uploads use R2.
+- CMS for rooms, room photos, gallery, journal, FAQs, verified reviews, meals and website settings. Image uploads use R2 on Sites or Supabase Storage on Vercel.
 - Booking calendar with month/week/list modes, source/status styling, detail drawer, CSV export and manual blocks.
 - ICS import/export, room mapping, secret references, fail-safe sync, scheduler endpoint and extension interface. No OTA availability is scraped and no live API integration is claimed.
 - Branded transactional mail templates and persistent outbox. Real delivery requires configured Resend credentials and verified sender.
@@ -55,3 +55,19 @@ Direct online reservations default to off. External booking links and saved enqu
 - `node tests/http-smoke.mjs` and `node tests/content-smoke.mjs` against an isolated local database with `work/test-auth.json`. These use clearly labelled test data. Do not run against production.
 
 Booking conflict, adjacent-date, cancellation, move and concurrent write tests cover the actual database triggers. HTTP tests cover secure routes, room persistence, simultaneous booking requests, functions, calendar fail-safe behavior, forms, CMS, uploads and SEO. Live Resend delivery, external channel credentials and real Supabase deployment require those services and must be verified before launch.
+
+## Deploy on Vercel
+
+Import `sonitaalberts-designer/Beloftebos` using the Next.js framework preset. `vercel.json` selects `npm run build:vercel` and `.next`; the existing Sites build remains available separately. Use Node 24.x (or supported Node 22.13+). No Cloudflare account or bindings are needed for the Vercel build.
+
+1. Apply `db/postgresql.sql`, then `db/postgresql-seed.sql` in your new Supabase project. The seed preserves existing records and adds the six articles, gallery and initial content, without invented rooms or rates.
+2. Create a **private** Supabase Storage bucket named `beloftebos-images`. Set its maximum file size to 4 MB and allowed MIME types to image/jpeg, image/png, image/webp and image/avif. Images uploaded here are website media, served publicly through the application; never upload private guest documents.
+3. Add server-only Vercel environment variables from `.env.example`: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_STORAGE_BUCKET`, `ADMIN_SETUP_TOKEN` and your final HTTPS `SITE_URL`. Generate a unique setup token; do not reuse local testing credentials.
+4. Configure `RESEND_API_KEY`, verified `EMAIL_FROM`, and calendar secrets when ready. An external scheduler must POST `/api/cron` with its bearer `CRON_SECRET` to process email and calendar sync. No background in-memory jobs are assumed.
+5. Deploy, visit `/admin`, create the first administrator, then remove the setup token and redeploy. Complete the production booking, email and channel checks before enabling direct bookings.
+
+For the Vercel runtime locally, copy `.env.example` to `.env.local`, set your Supabase values, run `npm run dev:vercel`, and open port 3000. `npm run build:vercel` followed by `npm run start:vercel` tests the production server. The original Sites/local D1 preview continues to use `npm run dev` on port 5173. The two providers do not automatically share records.
+
+Without Supabase, public pages can show supplied fallback content, but booking/admin persistence is unavailable and must not be described as connected. The Vercel build is checked locally; a live Vercel/Supabase deployment still needs your project credentials.
+
+References: [Vercel build configuration](https://vercel.com/docs/builds/configure-a-build), [Vercel function limits](https://vercel.com/docs/functions/limitations), [Supabase storage buckets](https://supabase.com/docs/guides/storage/buckets/fundamentals). Uploads are capped at 4 MB to stay below Vercel's request-size limit.

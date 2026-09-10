@@ -52,6 +52,7 @@ export default defineConfig(async () => {
     server: isCodexSeatbeltSandbox
       ? { watch: { useFsEvents: false, usePolling: true } }
       : undefined,
+    resolve: { alias: { "@/lib/platform": new URL("./lib/platform-cloudflare.ts", import.meta.url).pathname } },
     plugins: [
       vinext(),
       sites(),

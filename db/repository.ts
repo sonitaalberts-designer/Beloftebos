@@ -1,5 +1,6 @@
 import type { D1Database, R2Bucket } from "@cloudflare/workers-types";
-import { env } from "cloudflare:workers";
+import { env } from "@/lib/platform";
+import { supabaseStorage } from "@/lib/storage";
 import type { Entry } from "@/lib/content";
 export const tables = [
   "users",
@@ -39,7 +40,7 @@ function db() {
   return d;
 }
 export function bucket() {
-  return (env as unknown as Bindings).BUCKET;
+  return (env as unknown as Bindings).BUCKET ?? supabaseStorage();
 }
 const pg = () =>
   !!config("SUPABASE_URL") && !!config("SUPABASE_SERVICE_ROLE_KEY");

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {config} from "@/db/repository";
 import {origin} from "@/lib/seo";
 import "./globals.css";
+export const dynamic = "force-dynamic";
 const baseMetadata: Metadata = {
   title: {
     default: "BelofteBos Farmhouse Inn | Bandelierkop, Limpopo",

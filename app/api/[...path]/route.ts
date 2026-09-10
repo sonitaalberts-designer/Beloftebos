@@ -259,18 +259,18 @@ export async function POST(
       await requireAdmin();
       const b = bucket();
       if (!b) throw new Error("Image storage is not configured");
-      if (Number(req.headers.get("content-length") ?? 0) > 12000000)
-        throw new Error("Maximum upload is 10 MB");
+      if (Number(req.headers.get("content-length") ?? 0) > 4200000)
+        throw new Error("Maximum upload is 4 MB");
       const fd = await req.formData(),
         f = fd.get("file");
       if (
         !(f instanceof File) ||
-        f.size > 10000000 ||
+        f.size > 4000000 ||
         !["image/jpeg", "image/png", "image/webp", "image/avif"].includes(
           f.type,
         )
       )
-        throw new Error("Choose a JPG, PNG, WebP or AVIF image under 10 MB");
+        throw new Error("Choose a JPG, PNG, WebP or AVIF image under 4 MB");
       const bytes = new Uint8Array(await f.arrayBuffer());
       const valid =
         (f.type === "image/jpeg" && bytes[0] === 255 && bytes[1] === 216) ||

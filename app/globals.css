@@ -2682,7 +2682,7 @@ footer {
   position: absolute; z-index: 6; bottom: -104px; left: 50%;
   transform: translateX(-50%); width: 224px; height: 224px; padding: 22px;
   display: grid; place-items: center;
-  border: 10px solid var(--background); border-radius: 50%; background: #e7d8bf;
+  border: 10px solid var(--background); border-radius: 50%; background: #fbf8f2;
 }
 .hero-logo-badge img { width: 100%; height: auto; object-fit: contain; }
 .booking-wrap { margin-top: 134px; }

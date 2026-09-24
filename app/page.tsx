@@ -99,13 +99,6 @@ export default async function Home() {
               </a>
             </div>
           </div>
-          <a
-            className="scroll-mark"
-            href="#welcome"
-            aria-label="Scroll to welcome"
-          >
-            SCROLL TO SLOW DOWN <span>↓</span>
-          </a>
           <div className="hero-logo-badge">
             <Photo src="/images/beloftebos-illustrative-640.webp" alt="BelofteBos Farmhouse Inn" width={640} height={590} />
           </div>

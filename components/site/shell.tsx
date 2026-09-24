@@ -116,13 +116,16 @@ export function PageIntro({
 }
 export function ExternalBookings({
   settings = defaults,
+  whatsapp = false,
 }: {
   settings?: Record<string, unknown>;
+  whatsapp?: boolean;
 }) {
   return (
     <div className="external-bookings">
       <p>Prefer to book through a familiar platform?</p>
       <div>
+        {whatsapp && <a href="https://wa.me/27834091170?text=Hello%20Heidi%2C%20I%27d%20like%20to%20enquire%20about%20booking%20a%20stay%20at%20BelofteBos." target="_blank" rel="noopener noreferrer">Book via WhatsApp <ArrowUpRight size={16} /></a>}
         {Boolean(settings.lekker_url) && (
           <a
             href={String(settings.lekker_url)}

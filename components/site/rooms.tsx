@@ -30,8 +30,8 @@ export function RoomCards({
             Current room options and rates are available through our booking
             partners or directly from the property.
           </p>
-          <a className="button" href="/contact?subject=Accommodation%20enquiry">
-            Enquire about a room <ArrowUpRight size={17} />
+          <a className="button" href={preview ? "/accommodation" : "/contact?subject=Accommodation%20enquiry"}>
+            {preview ? "Explore our accommodation" : "Enquire about a room"} <ArrowUpRight size={17} />
           </a>
         </div>
       </div>

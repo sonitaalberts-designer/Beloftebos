@@ -2,12 +2,6 @@ import { Photo } from "@/components/site/photo";
 import {
   ArrowRight,
   ArrowUpRight,
-  Leaf,
-  Bird,
-  Flame,
-  Compass,
-  Users,
-  Flower2,
 } from "lucide-react";
 import { Shell, FinalCTA, ExternalBookings } from "@/components/site/shell";
 import { BookingBar, MapSection } from "@/components/site/controls";
@@ -24,7 +18,7 @@ export const generateMetadata = () =>
   );
 export default async function Home() {
   const d = await publicData();
-  const icons = [Bird, Leaf, Flower2, Flame, Compass, Users];
+  const illustrationViews = ["0 210 370 355", "370 210 330 355", "700 210 360 355", "1060 210 360 355", "1430 210 390 355", "1820 210 352 355"];
   return (
     <Shell settings={d.settings}>
       <main id="main">
@@ -133,7 +127,6 @@ export default async function Home() {
             <a className="text-link" href="/accommodation">
               Find your place here <ArrowUpRight size={19} />
             </a>
-            <span className="handwritten">Come as you are. Stay a while.</span>
           </div>
         </section>
         <section className="slow-section">
@@ -160,10 +153,11 @@ export default async function Home() {
           </div>
           <div className="experience-grid">
             {experiences.map(([title, copy], i) => {
-              const Icon = icons[i];
               return (
                 <div key={title}>
-                  <Icon strokeWidth={1} size={38} />
+                  <svg className="experience-illustration" viewBox={illustrationViews[i]} aria-hidden="true" focusable="false">
+                    <image href="/images/simple-pleasures-illustrations.png" width="2172" height="724" />
+                  </svg>
                   <h3>{title}</h3>
                   <p>{copy}</p>
                 </div>
@@ -179,12 +173,9 @@ export default async function Home() {
                 Your countryside <em>stay.</em>
               </h2>
             </div>
-            <a className="text-link" href="/accommodation">
-              Explore accommodation <ArrowUpRight size={18} />
-            </a>
           </div>
           <RoomCards rooms={d.rooms} preview />
-          <ExternalBookings settings={d.settings} />
+          <ExternalBookings settings={d.settings} whatsapp />
         </section>
         <section className="photo-transition">
           <Photo

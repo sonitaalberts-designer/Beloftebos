@@ -55,14 +55,12 @@ export function Choice({
   );
 }
 const nav = [
-  ["Stay", "/#welcome"],
-  ["Accommodation", "/accommodation"],
+  ["Accomodation", "/accommodation"],
+  ["Spesials", "/specials"],
+  ["Tea Garden", "/eat-drink"],
   ["Experience", "/#experience"],
-  ["Eat & Drink", "/#eat"],
   ["Functions", "/functions"],
-  ["Gallery", "/gallery"],
   ["Journal", "/journal"],
-  ["Contact", "/contact"],
 ];
 export function Header() {
   const [open, setOpen] = useState(false),

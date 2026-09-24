@@ -32,7 +32,7 @@
   --color-sidebar-primary-foreground: #1f321f;
 }
 :root {
-  --background: #fbf8f1;
+  --background: #ffffff;
   --foreground: #1d241d;
   --primary: #1f321f;
   --card: #fffdf8;
@@ -225,7 +225,7 @@ summary:focus-visible {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: #fbf8f1f5;
+  background: #fffffff5;
   backdrop-filter: blur(16px);
   border-bottom: 1px solid #d8dccf66;
   transition: height 0.25s;
@@ -548,7 +548,7 @@ summary:focus-visible {
   line-height: 1.8;
 }
 .accommodation-section {
-  background: #f3f0e6;
+  background: #ffffff;
   border-radius: 45px 45px 0 0;
 }
 .room-editorial {
@@ -557,7 +557,7 @@ summary:focus-visible {
   gap: 0;
   border-radius: 8px;
   overflow: hidden;
-  background: #fbf8f1;
+  background: #ffffff;
 }
 .room-editorial > img {
   height: 440px;
@@ -599,7 +599,7 @@ summary:focus-visible {
   gap: 30px;
 }
 .room-card {
-  background: #fbf8f1;
+  background: #ffffff;
   border: 1px solid #d8dccf;
   border-radius: 7px;
   overflow: hidden;
@@ -703,7 +703,7 @@ summary:focus-visible {
   border-radius: 30px;
 }
 .explore-section {
-  background: #eeeede;
+  background: #ffffff;
 }
 .explore-grid {
   display: grid;
@@ -807,7 +807,7 @@ summary:focus-visible {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 9%;
-  background: var(--cream);
+  background: var(--background);
 }
 .location-section h2 {
   font-size: 46px;
@@ -1028,7 +1028,7 @@ footer {
 .lightbox {
   max-width: 90vw !important;
   width: 1100px !important;
-  background: #fbf8f1;
+  background: #ffffff;
 }
 .lightbox > img {
   max-height: 70vh;
@@ -1056,7 +1056,7 @@ footer {
   bottom: 20px;
   left: 20px;
   z-index: 45;
-  background: #fbf8f1;
+  background: #ffffff;
   border: 1px solid #ced4c2;
   box-shadow: 0 8px 40px #0002;
   max-width: 440px;
@@ -2674,22 +2674,22 @@ footer {
   }
 }
 
-/* A centred farmhouse seal bridges the photograph and cream page. */
-.hero { margin: 18px clamp(16px, 3vw, 48px) 0; height: calc(100svh - 150px); }
-.hero-photo, .hero-shade { border-radius: 18px; }
+/* A centred farmhouse seal bridges the full-width photograph and white page. */
+.hero { margin: 0; height: calc(100svh - 100px); }
+.hero-photo, .hero-shade { border-radius: 0; }
 .hero-photo { object-position: 50% 55%; }
 .hero-logo-badge {
   position: absolute; z-index: 6; bottom: -104px; left: 50%;
   transform: translateX(-50%); width: 224px; height: 224px; padding: 22px;
   display: grid; place-items: center;
-  border: 10px solid var(--ivory, #fbf8f1); border-radius: 50%; background: var(--cream);
+  border: 10px solid var(--background); border-radius: 50%; background: #e7d8bf;
 }
 .hero-logo-badge img { width: 100%; height: auto; object-fit: contain; }
 .booking-wrap { margin-top: 134px; }
 .footer-top > img { background: var(--cream); padding: 10px; }
 @media (max-width: 640px) {
-  .hero { margin: 10px 12px 0; height: 680px; }
-  .hero-photo, .hero-shade { border-radius: 12px; }
+  .hero { margin: 0; height: 680px; }
+  .hero-photo, .hero-shade { border-radius: 0; }
   .hero-photo { object-position: 64% 50%; }
   .hero-logo-badge { width: 164px; height: 164px; bottom: -76px; padding: 16px; border-width: 7px; }
   .booking-wrap { margin-top: 100px; }

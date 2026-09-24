@@ -115,9 +115,6 @@ export default async function Home() {
               alt="Sunlight through an arched farmhouse window, with a wicker basket on the bed"
               loading="lazy"
             />
-            <span className="image-caption">
-              YOUR LITTLE CORNER OF THE LIMPOPO COUNTRYSIDE
-            </span>
           </div>
           <div className="intro-copy">
             <span className="eyebrow">Welcome to BelofteBos</span>
@@ -151,7 +148,6 @@ export default async function Home() {
           <div className="wedding-image">
             <Photo src="/images/wedding-countryside.webp" width={1024} height={1536} alt="Bridal portrait inspiration among countryside trees at sunset" loading="lazy" />
           </div>
-          <span className="slow-side">YOUR PEOPLE. YOUR MOMENTS. YOUR STORY.</span>
         </section>
         <section id="experience" className="section experience-section">
           <div className="section-heading">

@@ -2745,3 +2745,16 @@ footer { background: var(--background); color: var(--foreground); }
 .functions-menu { min-width: 210px; padding: 8px; background: var(--background); color: var(--foreground); }
 .functions-menu a { padding: 12px; font-size: 14px; cursor: pointer; }
 .mobile-links .functions-trigger { font-family: var(--serif); font-size: 26px; padding: 12px 0; justify-content: space-between; }
+
+/* Join the photographs to their sections without outer gutters. */
+.intro-section { padding-bottom: 0; }
+.slow-section { padding: 0; gap: 0; grid-template-columns: 1fr 1fr; align-items: stretch; }
+.slow-copy { align-self: center; padding: 65px clamp(28px, 7vw, 110px); }
+.wedding-image { position: relative; aspect-ratio: 2 / 3; min-height: 100%; }
+.wedding-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 640px) {
+  .intro-copy { padding-bottom: 55px; }
+  .slow-section { gap: 0; padding: 0; }
+  .slow-copy { padding: 55px 7%; }
+  .wedding-image { width: 100%; min-height: 0; }
+}

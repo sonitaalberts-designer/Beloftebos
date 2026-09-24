@@ -115,12 +115,6 @@ export default async function Home() {
               alt="Sunlight through an arched farmhouse window, with a wicker basket on the bed"
               loading="lazy"
             />
-            <div className="circle-note">
-              A little less rush.
-              <br />
-              <em>A little more life.</em>
-              <Leaf size={24} />
-            </div>
             <span className="image-caption">
               YOUR LITTLE CORNER OF THE LIMPOPO COUNTRYSIDE
             </span>

@@ -109,8 +109,10 @@ export default async function Home() {
         <section id="welcome" className="section intro-section">
           <div className="intro-visual">
             <Photo
-              src={photos.nature}
-              alt="Stone steps and the welcoming farmhouse terrace"
+              src="/images/farmhouse-window.webp"
+              width={1200}
+              height={1600}
+              alt="Sunlight through an arched farmhouse window, with a wicker basket on the bed"
               loading="lazy"
             />
             <div className="circle-note">

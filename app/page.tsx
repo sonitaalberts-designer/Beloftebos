@@ -80,7 +80,7 @@ export default async function Home() {
             <div className="hero-brand">
               BELOFTEBOS <span>FARMHOUSE INN</span>
             </div>
-            <h1>
+            <h1 className="italic">
               {String(d.settings.hero_heading)
                 .split("\n")
                 .map((l, i) => (

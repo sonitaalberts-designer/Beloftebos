@@ -40,7 +40,7 @@ export const photos = {
   nature: "/images/nature.avif",
 };
 export const defaults: Record<string, unknown> = {
-  hero_heading: "A little closer to nature.\nA little closer to home.",
+  hero_heading: "Your peaceful escape in the heart of the Limpopo bushveld.",
   hero_description: "A peaceful countryside stay in the heart of Limpopo.",
   intro_heading: "A little place.\nA lot of heart.",
   intro_text:

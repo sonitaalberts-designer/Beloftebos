@@ -1,5 +1,5 @@
 import { Photo } from "@/components/site/photo";
-import { photos, type Entry } from "@/lib/content";
+import { type Entry } from "@/lib/content";
 import { ArrowUpRight } from "lucide-react";
 export function RoomCards({
   rooms,
@@ -12,8 +12,10 @@ export function RoomCards({
     return (
       <div className="room-editorial">
         <Photo
-          src={photos.room}
-          alt="HeuningBos room at BelofteBos with its wooden bed and turquoise cushions"
+          src="/images/countryside-stay.webp"
+          width={1200}
+          height={1600}
+          alt="Sunlit farmhouse bedroom with twin beds, green throws and an arched garden-facing window"
           loading="lazy"
         />
         <div>

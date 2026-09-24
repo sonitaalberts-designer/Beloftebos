@@ -10,7 +10,7 @@ const baseMetadata: Metadata = {
   },
   description:
     "A peaceful farmhouse stay in Bandelierkop, Limpopo. Rest, reconnect and enjoy a warm countryside welcome near Louis Trichardt and the N1.",
-  icons: { icon: "/images/beloftebos-logo-256.webp" },
+  icons: { icon: "/images/beloftebos-illustrative-256.webp" },
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",

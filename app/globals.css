@@ -2673,3 +2673,24 @@ footer {
     display: none;
   }
 }
+
+/* A centred farmhouse seal bridges the photograph and cream page. */
+.hero { margin: 18px clamp(16px, 3vw, 48px) 0; height: calc(100svh - 150px); }
+.hero-photo, .hero-shade { border-radius: 18px; }
+.hero-photo { object-position: 50% 55%; }
+.hero-logo-badge {
+  position: absolute; z-index: 6; bottom: -104px; left: 50%;
+  transform: translateX(-50%); width: 224px; height: 224px; padding: 22px;
+  display: grid; place-items: center;
+  border: 10px solid var(--ivory, #fbf8f1); border-radius: 50%; background: var(--cream);
+}
+.hero-logo-badge img { width: 100%; height: auto; object-fit: contain; }
+.booking-wrap { margin-top: 134px; }
+.footer-top > img { background: var(--cream); padding: 10px; }
+@media (max-width: 640px) {
+  .hero { margin: 10px 12px 0; height: 680px; }
+  .hero-photo, .hero-shade { border-radius: 12px; }
+  .hero-photo { object-position: 64% 50%; }
+  .hero-logo-badge { width: 164px; height: 164px; bottom: -76px; padding: 16px; border-width: 7px; }
+  .booking-wrap { margin-top: 100px; }
+}

@@ -69,7 +69,7 @@ export default async function Home() {
             className="hero-photo"
             sizes="100vw"
             src={photos.hero}
-            alt="The stone farmhouse, red roof and tree-lined lawn at BelofteBos Farmhouse Inn"
+            alt="Sunlight through the trees over the lawn and countryside at BelofteBos Farmhouse Inn"
             fetchPriority="high"
           />
           <div className="hero-shade" />
@@ -99,9 +99,6 @@ export default async function Home() {
               </a>
             </div>
           </div>
-          <span className="hero-caption">
-            A farmhouse welcome. A slower kind of stay.
-          </span>
           <a
             className="scroll-mark"
             href="#welcome"
@@ -109,6 +106,9 @@ export default async function Home() {
           >
             SCROLL TO SLOW DOWN <span>↓</span>
           </a>
+          <div className="hero-logo-badge">
+            <Photo src="/images/beloftebos-illustrative-640.webp" alt="BelofteBos Farmhouse Inn" width={640} height={590} />
+          </div>
         </section>
         <div className="booking-wrap">
           <BookingBar />

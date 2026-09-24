@@ -80,7 +80,7 @@ export function Header() {
       <header className={"site-header " + (compact ? "compact" : "")}>
         <a href="/" aria-label="BelofteBos home" className="logo">
           <Photo
-            src="/images/beloftebos-logo-256.webp"
+            src="/images/beloftebos-illustrative-256.webp"
             width="100"
             height="100"
             alt="BelofteBos Farmhouse Inn"

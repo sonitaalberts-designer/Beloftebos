@@ -10,7 +10,7 @@ export function Footer({
     <footer>
       <div className="footer-top">
         <img
-          src="/images/beloftebos-logo-256.webp"
+          src="/images/beloftebos-illustrative-256.webp"
           alt="BelofteBos Farmhouse Inn"
           width="150"
           height="150"

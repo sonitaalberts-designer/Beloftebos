@@ -6,7 +6,7 @@ export function Photo({
 }: ImgHTMLAttributes<HTMLImageElement>) {
   const local =
     typeof src === "string" &&
-    /^\/images\/(property|garden|pool|room|food|nature)\.avif$/.test(src);
+    /^\/images\/(property|farmhouse-hero|garden|pool|room|food|nature)\.avif$/.test(src);
   const path = local ? String(src).replace(".avif", "") : "";
   return (
     <img

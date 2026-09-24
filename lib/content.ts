@@ -32,7 +32,7 @@ export const brand = {
   maps: "https://www.google.com/maps/search/?api=1&query=BelofteBos+Farmhouse+Inn+Bandelierkop",
 };
 export const photos = {
-  hero: "/images/property.avif",
+  hero: "/images/farmhouse-hero.avif",
   garden: "/images/garden.avif",
   pool: "/images/pool.avif",
   room: "/images/room.avif",

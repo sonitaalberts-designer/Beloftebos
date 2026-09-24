@@ -10,7 +10,9 @@ export const generateMetadata = () =>
     "Enquire about a private gathering at BelofteBos in Bandelierkop. Discuss dates, catering and accommodation with Heidi.",
     "/functions",
   );
-export default async function Page() {
+export default async function Page({ searchParams }: { searchParams: Promise<{ event?: string }> }) {
+  const { event } = await searchParams;
+  const selected = ["Weddings", "Catering", "Kids parties", "Spesial events", "End year functions"].includes(event ?? "") ? event! : "Private function";
   return (
     <Shell settings={await settings()}>
       <main id="main">
@@ -43,7 +45,7 @@ export default async function Page() {
                 confirmation.
               </p>
             </div>
-            <EnquiryForm functionForm />
+            <EnquiryForm functionForm initialEvent={selected} />
           </div>
         </div>
       </main>

@@ -141,32 +141,17 @@ export default async function Home() {
         </section>
         <section className="slow-section">
           <div className="slow-copy">
-            <span className="eyebrow">Room to breathe</span>
-            <h2>
-              A place to
-              <br />
-              <em>slow down.</em>
-            </h2>
-            <p>
-              Let the garden set the pace. A little birdsong, a patch of
-              afternoon sun, and nowhere you need to be just yet.
-            </p>
-            <p>
-              Here, the small moments have space to become the best part of your
-              day.
-            </p>
-            <a className="text-link" href="/gallery">
-              A glimpse of life here <ArrowUpRight size={19} />
-            </a>
+            <span className="eyebrow">Weddings & photography</span>
+            <h2>A setting for<br /><em>your story.</em></h2>
+            <p>Wedding moments, portraits and memories worth keeping. Bring your ideas to the Limpopo countryside and let’s talk about a setting that feels like you.</p>
+            <p>Speak to Heidi about wedding arrangements or a photography session, your preferred date and what you have in mind.</p>
+            <a className="text-link" href="/functions?event=Weddings">Plan your special day <ArrowUpRight size={19} /></a>
+            <a className="text-link" href="/contact?subject=Photography%20enquiry">Enquire about photography <ArrowUpRight size={19} /></a>
           </div>
-          <div className="oval-image">
-            <Photo
-              src={photos.garden}
-              alt="Leafy garden and picnic tables at BelofteBos"
-              loading="lazy"
-            />
+          <div className="wedding-image">
+            <Photo src="/images/wedding-countryside.webp" width={1024} height={1536} alt="Bridal portrait inspiration among countryside trees at sunset" loading="lazy" />
           </div>
-          <span className="slow-side">ROOTED IN NATURE. MADE FOR REST.</span>
+          <span className="slow-side">YOUR PEOPLE. YOUR MOMENTS. YOUR STORY.</span>
         </section>
         <section id="experience" className="section experience-section">
           <div className="section-heading">

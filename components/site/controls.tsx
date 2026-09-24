@@ -8,6 +8,7 @@ import {
   ChevronLeft,
   ChevronRight,
   CalendarDays,
+  ChevronDown,
 } from "lucide-react";
 import {
   Dialog,
@@ -22,6 +23,7 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { type Entry } from "@/lib/content";
 import { gallerySeeds } from "@/lib/gallery-data";
 export function Choice({
@@ -62,6 +64,17 @@ const nav = [
   ["Functions", "/functions"],
   ["Journal", "/journal"],
 ];
+const functionCategories = ["Weddings", "Catering", "Kids parties", "Spesial events", "End year functions"];
+function FunctionsMenu({ onNavigate }: { onNavigate?: () => void }) {
+  return <DropdownMenu>
+    <DropdownMenuTrigger className="functions-trigger">Functions <ChevronDown size={14} /></DropdownMenuTrigger>
+    <DropdownMenuContent align="start" className="functions-menu">
+      {functionCategories.map(category => <DropdownMenuItem key={category} asChild>
+        <a href={"/functions?event=" + encodeURIComponent(category)} onClick={onNavigate}>{category}</a>
+      </DropdownMenuItem>)}
+    </DropdownMenuContent>
+  </DropdownMenu>;
+}
 export function Header() {
   const [open, setOpen] = useState(false),
     [compact, setCompact] = useState(false);
@@ -85,7 +98,7 @@ export function Header() {
           />
         </a>
         <nav aria-label="Main navigation">
-          {nav.map(([n, h]) => (
+          {nav.map(([n, h]) => n === "Functions" ? <FunctionsMenu key={n} /> : (
             <a key={n} href={h}>
               {n}
             </a>
@@ -107,7 +120,7 @@ export function Header() {
           <DialogTitle>Make yourself at home.</DialogTitle>
           <DialogDescription>Explore BelofteBos</DialogDescription>
           <nav className="mobile-links">
-            {nav.map(([n, h]) => (
+            {nav.map(([n, h]) => n === "Functions" ? <FunctionsMenu key={n} onNavigate={() => setOpen(false)} /> : (
               <a onClick={() => setOpen(false)} key={n} href={h}>
                 {n}
                 <ArrowUpRight />

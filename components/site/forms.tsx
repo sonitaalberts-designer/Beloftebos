@@ -45,14 +45,16 @@ export function Field({
 export function EnquiryForm({
   functionForm = false,
   subject = "",
+  initialEvent = "Private function",
 }: {
   functionForm?: boolean;
   subject?: string;
+  initialEvent?: string;
 }) {
   const [busy, setBusy] = useState(false),
     [message, setMessage] = useState(""),
     [error, setError] = useState(false),
-    [event, setEvent] = useState("Private function"),
+    [event, setEvent] = useState(initialEvent),
     [accommodation, setAccommodation] = useState("No");
   return (
     <form
@@ -114,6 +116,11 @@ export function EnquiryForm({
                 value={event}
                 onChange={setEvent}
                 options={[
+                  "Weddings",
+                  "Catering",
+                  "Kids parties",
+                  "Spesial events",
+                  "End year functions",
                   "Private function",
                   "Celebration",
                   "Family gathering",

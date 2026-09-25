@@ -2773,3 +2773,42 @@ footer { background: var(--background); color: var(--foreground); }
 #accommodation .external-bookings { padding-inline: 6%; }
 #accommodation .external-bookings > div { flex-wrap: wrap; gap: 18px 35px; }
 #accommodation .room-grid { padding-inline: 7.5%; }
+
+/* Compact full-width wedding feature and experience strip. */
+.slow-section { min-height: clamp(360px, 50svh, 500px); }
+.slow-copy { padding: 26px clamp(24px, 5vw, 80px); }
+.slow-copy .eyebrow { margin-bottom: 10px; }
+.slow-copy h2 { font-size: clamp(30px, 3.2vw, 46px); line-height: 1.1; margin-bottom: 14px; }
+.slow-copy h2 br { display: none; }
+.slow-copy h2 em::before { content: " "; }
+.slow-copy p { max-width: 550px; font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
+.slow-copy .text-link { margin-top: 10px; font-size: 13px; }
+.wedding-image { aspect-ratio: auto; min-height: 0; }
+.wedding-image img { object-position: 50% 42%; }
+.experience-section { padding: 28px 5% 30px; }
+.experience-section .section-heading { margin-bottom: 18px; }
+.experience-section .section-heading .eyebrow { margin-bottom: 6px; }
+.experience-section .section-heading h2 { font-size: clamp(25px, 2.5vw, 36px); margin-bottom: 0; }
+.experience-section .section-heading h2 br { display: none; }
+.experience-section .section-heading h2 em::before { content: " "; }
+.experience-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 22px; }
+.experience-grid .experience-illustration { height: 80px; margin-bottom: 8px; }
+.experience-grid h3 { font-size: 21px; margin-bottom: 6px; }
+.experience-grid p { font-size: 13px; line-height: 1.5; margin-bottom: 0; }
+@media (max-width: 800px) {
+  .experience-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+}
+@media (max-width: 640px) {
+  .slow-section { min-height: 0; }
+  .slow-copy { padding: 28px 7%; }
+  .wedding-image { height: 260px; }
+  .experience-section { padding: 24px 5%; }
+  .experience-grid .experience-illustration { height: 65px; }
+  .experience-grid h3 { font-size: 19px; }
+}
+
+/* Keep short final lines from leaving isolated words across public copy. */
+main p, footer p, .page-intro p, .field { text-wrap: pretty; }
+main h1, main h2, main h3 { text-wrap: balance; }
+.experience-grid p, .room-card p, .explore-grid p { text-wrap: balance; }
+.intro-copy p, .room-editorial p, .eat-section p { max-width: 60ch; }

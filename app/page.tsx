@@ -153,10 +153,12 @@ export default async function Home() {
           </div>
           <div className="experience-grid">
             {experiences.map(([title, copy], i) => {
+              const [x, y, width, height] = illustrationViews[i].split(" ").map(Number);
               return (
                 <div key={title}>
                   <svg className="experience-illustration" viewBox={illustrationViews[i]} aria-hidden="true" focusable="false">
-                    <image href="/images/simple-pleasures-illustrations.png" width="2172" height="724" />
+                    <defs><clipPath id={`experience-crop-${i}`}><rect x={x} y={y} width={width} height={height} /></clipPath></defs>
+                    <image href="/images/simple-pleasures-illustrations.png" width="2172" height="724" clipPath={`url(#experience-crop-${i})`} />
                   </svg>
                   <h3>{title}</h3>
                   <p>{copy}</p>
